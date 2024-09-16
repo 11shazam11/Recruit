@@ -1,0 +1,75 @@
+
+<div class="jobcon">
+  <div class="bigwrapper">
+    <h1>UPDATE JOB</h1>
+    <% if(error){%>
+      <div class="alert alert-danger" role="alert">
+        <%= error[0].msg %>
+      </div>
+    <%}%>
+    <form action="/updatejob" method="post">
+      <input type="hidden" value="<%=company.company%>" name="companyname"> 
+      <!-- //top section -->
+      <div class="select">
+        <button class="dec">Select Type</button>
+        <select id='type' name="type">
+          <option value="Tech" <%= company.type == "Tech"? "selected":"" %> >Tech</option>
+          <option value="Manage" <%= company.type == "Manage"? "selected":"" %> >Manage</option>
+          <option value="Chindi chora" <%= company.type == "Chindi chora"? "selected":"" %> >Chindi chora</option>
+        </select>
+      </div>
+      <div class="select">
+        <button class="dec">Select Designation</button>
+        <select id='desig' name="desig">
+          <option value="Upper" <%= company.desig == "Upper"? "selected":"" %>>upper</option>
+          <option value="Middle" <%= company.desig == "Middle"? "selected":"" %>>middle</option>
+          <option value="Lower" <%= company.desig == "Lower"? "selected":"" %>>Lower</option>
+        </select>
+
+      </div>
+      <!-- //second line/ -->
+      <div class="input-box">
+        <input placeholder="Enter company name" type="text" id="company" name="company" value="<%=company.company%>">
+      </div <!-- third line/// -->
+      <div class="two">
+        <div class="input-box">
+          <input placeholder="Enter job location" type="text" name="location" value="<%=company.location%>">
+        </div>
+        <div class="input-box">
+          <input placeholder="Number of positions" type="number" name="positions" value="<%=company.positions%>">
+        </div>
+      </div>
+
+      <!-- fourth line/// -->
+      <div class="input-box">
+        <button class="dec">Apply By</button>
+        <input type="date" name="date" value="<%=company.applydate%>">
+      </div>
+      <!-- fifth line -->
+      <div class="input-box">
+        <input placeholder="Expected Salary (0-0 format)" type="text" name="salary" value="<%=company.salary%>">
+      </div>
+      <!-- sixth line -->
+      <div class="select" >
+        <button class="dec">Select skills</button>
+        <select id="skills" multiple name="skills">
+          <option disabled>SKILLS</option>
+          <option value="Java" <%= company.skills.includes("Java") ? "selected" : "" %>>Java</option>
+          <option value="PHP" <%= company.skills.includes("PHP") ? "selected" : "" %>>PHP</option>
+          <option value="Comunication" <%= company.skills.includes("Comunication") ? "selected" : "" %>>Comunication</option>
+          <option value="NODE" <%= company.skills.includes("NODE") ? "selected" : "" %>>NODE</option>
+          <option value="MONGO" <%= company.skills.includes("MONGO") ? "selected" : "" %>>MONGO</option>
+        </select>
+      </div>
+      <!-- //submit button -->
+      <button type="submit" class="btn">Update job</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
+  <script>
+    new MultiSelectTag('skills')  // id
+  </script>
+
+
+
+</div>

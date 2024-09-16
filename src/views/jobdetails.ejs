@@ -1,0 +1,89 @@
+<div class="detailscon">
+    <% jobs.forEach(job => { %>
+      <div class="jobcard">
+        <div class="job-card">
+          <div class="hiring-status">
+            <h3>Actively hiring</h3>
+          </div>
+          <div class="company">
+            <h1><%= job.company %></h1>
+            <% if (locals.user){ %>
+              <button type="button" class="btn btn-info see"><a href="/delete?company=<%= job.company %>">Delete</a></button>
+              <button type="button" class="btn btn-info see"><a href="/update?company=<%= job.company %>">Update</a></button>
+            <%}%>
+          </div>
+          <div class="tech-desig">
+            <h3><%= job.type %>: <%= job.desig %></h3>
+          </div>
+          <div class="location">
+            <h3>location : <%= job.location %></h3>
+          </div>
+          <div class="salary">
+            <h3>Salary : <%= job.salary %></h3>
+          </div>
+          <div class="bydata">
+            <h3>Apply by date : <%=job.applydate %></h3>
+          </div>
+          <div class="positions">
+            <h3>Total available positions: <%=job.positions %></h3>
+          </div>
+          <div class="applicants">
+            <% if(locals.user) { %>
+              <a href="/appliedApplicants?company=<%= job.company%>" class="disapplied"> Applicants : <%= job.applied %></a>
+            <% }else{ %>
+              <a href="/notRecruiter" class="disapplied">Applicants : <%= job.applied %></a>
+              <%} %>
+          </div>
+          <div class="skills">
+            <% job.skills.forEach(skill => { %>
+              <button class="btn btn-info"> <%= skill %> </button>
+            <%})%>
+          </div>
+              <% if(!locals.user) { %>
+                <div class="apply">
+                  <a onclick="popmodal()" class="btn btn-lg btn-success btn-block" id="myBtn">Apply</a>
+                </div>
+              <%} %>
+
+        </div>
+      </div>
+
+    <%})%>
+</div>
+
+<div id="applymodal">
+  <button id="innerclose" onclick="closemodal()">X</button>
+  <div class="applyinner">
+    <div class="wrapper">
+        <form action="/applyjob" method="post" enctype="multipart/form-data">
+            <h1><%= locals.company %></h1>
+          <% if(error) {%>
+            <div class="alert alert-danger" role="alert">
+              <%= error[0].msg %>
+            </div>
+          <%}%>
+          <input type="hidden" name="company" value="<%= locals.company %>">
+          <div class="input-box">
+              <input type="text" placeholder="Name" required name="name">
+              <i class='bx bxs-lock-alt' ></i>
+          </div>
+            <div class="input-box">
+                <input type="text" placeholder="Email" required name="email">
+                <i class='bx bxs-user'></i>
+            </div>
+          <div class="input-box">
+              <input type="number" placeholder="Contact Number" required name="contact">
+              <i class='bx bxs-lock-alt' ></i>
+          </div>
+          <h4>RESUME: <span><input type="file" required name="resume" accept=".pdf"></span></h4>
+            <button type="submit" class="btn">Apply</button>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  <% if (modal) { %>
+    document.getElementById('applymodal').style.display = 'block';
+  <% } %>
+</script>

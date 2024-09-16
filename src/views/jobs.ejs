@@ -1,0 +1,33 @@
+<div class="jcontainer">
+  <% jobs.forEach(job => { %>
+    <div class="jobcard">
+      <div class="job-card">
+        <div class="hiring-status">
+          <h3>Actively hiring</h3>
+        </div>
+        <div class="company">
+          <h1><%= job.company %></h1>
+        </div>
+        <div class="tech-desig">
+          <h3><%= job.type %>: <%= job.desig %></h3>
+        </div>
+        <div class="location">
+          <h3>location : <%= job.location %></h3>
+        </div>
+        <div class="salary">
+          <h3>Salary : <%= job.salary %></h3>
+        </div>
+        <div class="skills">
+          <% job.skills.forEach(skill => { %>
+            <button class="btn btn-info"> <%= skill %> </button>
+          <%})%>
+        </div>
+            <div class="apply">
+              <a href="/viewdetails?company=<%= job.company %>" class="btn btn-lg btn-success btn-block" id="myBtn">View Details</a>
+            </div>
+
+      </div>
+    </div>
+    
+  <%})%>
+</div>

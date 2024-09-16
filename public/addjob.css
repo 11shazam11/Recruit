@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Libre+Baskerville:wght@700&family=Poppins&family=Rhodium+Libre&display=swap');
+
+* {
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Rhodium Libre', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(320deg, #e117a7, #17bee1, #1741e1);
+  background-size: 800% 800%;
+  
+
+  -o-animation: AnimationName 32s ease infinite;
+  animation: AnimationName 32s ease infinite;
+}
+
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+.bg-trans{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); 
+}
+.jobcon{
+  position:relative;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  top:50px;
+}
+.bigwrapper {
+  position: relative;
+  width: 70%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(198, 15, 15, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  color: white;
+  border-radius: 40px;
+  padding: 30px 40px;
+}
+.navbar-expand-lg{
+  z-index:11;
+}
+
+.select {
+  display: flex;
+  width: 100%;
+
+  select {
+    position: relative;
+    padding: 2% 20%;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+.dec {
+
+  border-radius: 10px;
+  position: relative;
+  width: 30%;
+  border: 1px;
+  background: transparent;
+}
+
+
+
+.two {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nospace {
+  display: flex;
+}
+
+.bigwrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  color: brown;
+
+}
+
+.bigwrapper .input-box {
+  position: relative;
+  margin: 10px;
+
+}
+
+.input-box input {
+
+  background: transparent;
+  outline: none;
+  border: 2px solid rgba(234, 5, 5, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: white;
+  padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+  color: white;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.bigwrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+  accent-color: white;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: white;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  height: 45px;
+  background: lightgreen;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+
+.mult-select-tag .wrapper {
+  width: 80%;
+  padding: 15px;
+}
+
+.mult-select-tag .rounded {
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.mult-select-tag ul {
+  color: black;
+}

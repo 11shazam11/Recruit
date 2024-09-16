@@ -1,0 +1,4 @@
+<% applicant.forEach(app => { %>
+  <h2>Name: <%= app.name %></h2>
+  <a href="/resume/<%= app.resume %>" class="btn btn-lg btn-primary">Open Resume</a>
+<% }) %>

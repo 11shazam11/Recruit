@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Libre+Baskerville:wght@700&family=Poppins&family=Rhodium+Libre&display=swap');
+*{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Rhodium Libre', serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/* Layout style */
+body{
+  background: linear-gradient(320deg, #e117a7, #17bee1, #1741e1);
+  background-size: 800% 800%;
+
+  -o-animation: AnimationName 32s ease infinite;
+  animation: AnimationName 32s ease infinite;
+}
+
+@-o-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.bg-trans{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); 
+}
+.navbar-expand-lg{
+  z-index:11;
+}
+
+/* Home style */
+
+.container{
+  width:100vw;
+  display:flex;
+  position:relative;
+  top:50px;
+  justify-content:space-between;
+}
+.box{
+  position: relative;
+  width: 40%;
+  padding:20px;
+}
+.left{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+.sr{
+  display:flex;
+  justify-content:space-around;
+  margin-top:25px;
+}
+.sr a{
+  text-decoration:none;
+  
+}
+.sr button{
+  border:2px solid;
+}
+.right{
+}
+/* in right container form style */
+
+.wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(198, 15, 15, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0,0, .1);
+  width: 420px;
+  color: white;
+  border-radius: 40px;
+  padding: 30px 40px;
+}
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  color: brown;
+
+}
+.wrapper .input-box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+.input-box input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 2px solid rgba(234, 5, 5, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: white;
+  padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder{
+  color: white;
+}
+.input-box i{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+.wrapper .remember-forgot{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+.remember-forgot label input{
+  accent-color: white;
+  margin-right: 3px;
+}
+.remember-forgot a{
+  color: white;
+  text-decoration: none;
+}
+.remember-forgot a:hover{
+  text-decoration: underline;
+}
+.wrapper button{
+  width: 100%;
+  height: 45px;
+  background: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0,0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+.wrapper .register-link{
+  font-size: 16.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+
+}
+.register-link p a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.register-link p a:hover{
+  text-decoration: underline;
+}
+
+/* add jobs card style */
+.jcontainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin:10px;
+}
+
+.jobcard {
+  position: relative;
+  width: 30%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(198, 15, 15, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+  margin:10px;
+}
+
+#myBtn {
+  margin-top: 10px;
+  position: relative;
+  cursor:pointer;
+}
+
+/* details page style */
+.detailscon{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.disapplied{
+  text-decoration:none;
+  color:darkred;
+  font-weight:bolder;
+}
+.see a {
+  text-decoration:none;
+  color:black;
+}
+
+
+/* apply for job modal style */
+#applymodal{
+  display:none;
+  top:0;
+  position:absolute;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(20px);
+}
+.applyinner{
+  position:relative;
+  top:20%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#innerclose{
+  position:absolute;
+  top:60px;
+  right:2%;
+  padding:15px;
+
+}

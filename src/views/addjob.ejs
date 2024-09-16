@@ -1,0 +1,74 @@
+
+<div class="jobcon">
+  <div class="bigwrapper">
+    <h1>ADD JOB</h1>
+    <% if(error){%>
+      <div class="alert alert-danger" role="alert">
+        <%= error[0].msg %>
+      </div>
+    <%}%>
+    <form action="/add" method="post">
+      <!-- //top section -->
+      <div class="select">
+        <button class="dec">Select Type</button>
+        <select id='type' name="type">
+          <option value="Tech">Tech</option>
+          <option value="Manage">Manage</option>
+          <option value="Chindi chora">Chindi chora</option>
+        </select>
+      </div>
+      <div class="select">
+        <button class="dec">Select Designation</button>
+        <select id='desig' name="desig">
+          <option value="Upper">upper</option>
+          <option value="Middle">middle</option>
+          <option value="Lower">Lower</option>
+        </select>
+
+      </div>
+      <!-- //second line/ -->
+      <div class="input-box">
+        <input placeholder="Enter company name" type="text" id="company" name="company">
+      </div <!-- third line/// -->
+      <div class="two">
+        <div class="input-box">
+          <input placeholder="Enter job location" type="text" name="location">
+        </div>
+        <div class="input-box">
+          <input placeholder="Number of positions" type="number" name="positions">
+        </div>
+      </div>
+
+      <!-- fourth line/// -->
+      <div class="input-box">
+        <button class="dec">Apply By</button>
+        <input type="date" name="date">
+      </div>
+      <!-- fifth line -->
+      <div class="input-box">
+        <input placeholder="Expected Salary (0-0 format)" type="text" name="salary">
+      </div>
+      <!-- sixth line -->
+      <div class="select">
+        <button class="dec">Select skills</button>
+        <select id="skills" multiple name="skills">
+          <option selected disabled>SKILLS</option>
+          <option value="Java">Java</option>
+          <option value="PHP">PHP</option>
+          <option value="Comunication">Comunication</option>
+          <option value="NODE">NODE</option>
+          <option value="MONGO">MONGO</option>
+        </select>
+      </div>
+      <!-- //submit button -->
+      <button type="submit" class="btn">ADD JOB</button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
+  <script>
+    new MultiSelectTag('skills')  // id
+  </script>
+
+
+
+</div>
